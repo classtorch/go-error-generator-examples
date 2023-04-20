@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package uclass.service.account;
+
+option go_package = "/golang/account";
+import "errors/errors.proto";
+
+enum ErrorCode {
+  SUCCESS = 0 [(errors.msg) = "成功", (errors.msg_english) = "success"];  // 成功
+  TOKEN_INVALID = 1 [(errors.msg) = "登录失效，请重新登录", (errors.msg_english) = "token failure，please login"];  // 登录失效，请重新登录
+  ACCOUNT_NOT_EXISTS = 2 [(errors.msg) = "账号不存在", (errors.msg_english) = "account not exist"]; // 账号不存在
+}

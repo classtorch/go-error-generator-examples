@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package uclass.service.order;
+
+option go_package = "/golang/order";
+import "errors/errors.proto";
+
+enum ErrorCode {
+  SUCCESS = 0 [(errors.msg) = "成功", (errors.msg_english) = "success"];  // 成功
+  ORDER_NOT_EXISTS = 3[(errors.msg) = "订单不存在", (errors.msg_english) = "order not exist"]; // 订单不存在
+}
