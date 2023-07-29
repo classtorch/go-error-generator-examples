@@ -7,7 +7,21 @@ import (
 )
 
 var (
-	SUCCESS            = &errors.Error{Code: 0, Msg: "成功"}         //成功
-	TOKEN_INVALID      = &errors.Error{Code: 1, Msg: "登录失效，请重新登录"} //登录失效，请重新登录
-	ACCOUNT_NOT_EXISTS = &errors.Error{Code: 2, Msg: "账号不存在"}      //账号不存在
+	SUCCESS       = &errors.Error{Code: 0, Msg: "成功"}           //成功
+	UnKnown       = &errors.Error{Code: -1, Msg: "未知错误"}        //未知错误
+	InValid_Phone = &errors.Error{Code: 10001, Msg: "手机号格式不正确"} //手机号格式不正确
+)
+
+var (
+	Msg = map[int32]*errors.Error{
+		0:     &errors.Error{Code: 0, Msg: "成功"},
+		-1:    &errors.Error{Code: -1, Msg: "未知错误"},
+		10001: &errors.Error{Code: 10001, Msg: "手机号格式不正确"},
+	}
+
+	Msg_English = map[int32]*errors.Error{
+		0:     &errors.Error{Code: 0, Msg: "success"},
+		-1:    &errors.Error{Code: -1, Msg: "unknown err"},
+		10001: &errors.Error{Code: 10001, Msg: "invalid phone no"},
+	}
 )

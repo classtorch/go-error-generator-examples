@@ -10,3 +10,15 @@ var (
 	SUCCESS          = &errors.Error{Code: 0, Msg: "成功"}    //成功
 	ORDER_NOT_EXISTS = &errors.Error{Code: 3, Msg: "订单不存在"} //订单不存在
 )
+
+var (
+	Msg = map[int32]*errors.Error{
+		0: &errors.Error{Code: 0, Msg: "成功"},
+		3: &errors.Error{Code: 3, Msg: "订单不存在"},
+	}
+
+	Msg_English = map[int32]*errors.Error{
+		0: &errors.Error{Code: 0, Msg: "success"},
+		3: &errors.Error{Code: 3, Msg: "order not exist"},
+	}
+)
